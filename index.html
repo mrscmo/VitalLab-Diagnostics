@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VitalLab | Advanced Medical Diagnostics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@300;400;600;700&family=Lato:wght@300;400;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+      // Polyfill process for browser environments to prevent "Uncaught ReferenceError: process is not defined"
+      if (typeof window !== 'undefined' && typeof process === 'undefined') {
+        window.process = {
+          env: {
+            NODE_ENV: 'production'
+          }
+        };
+      }
+      
+      // Dynamic Tailwind Configuration using CSS Variables - Safe check
+      if (typeof tailwind !== 'undefined') {
+        tailwind.config = {
+          theme: {
+            extend: {
+              fontFamily: {
+                sans: ['var(--font-primary)', 'Inter', 'sans-serif'],
+              },
+              colors: {
+                medical: {
+                  50: 'var(--color-primary-50)',
+                  100: 'var(--color-primary-100)',
+                  500: 'var(--color-primary-500)',
+                  600: 'var(--color-primary-600)',
+                  700: 'var(--color-primary-700)',
+                  800: 'var(--color-primary-800)',
+                  900: 'var(--color-primary-900)',
+                },
+                accent: {
+                  500: 'var(--color-accent-500)',
+                  600: 'var(--color-accent-600)',
+                },
+                slate: {
+                  900: 'var(--color-secondary-900)', // Map secondary to dark slate usually used for text/footer
+                }
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/client": "https://esm.sh/react-dom@^19.2.3/client",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.37.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@2.39.3"
+  }
+}
+</script>
+</head>
+  <body class="bg-slate-50 text-slate-900">
+    <div id="root"></div>
+  </body>
+</html>
